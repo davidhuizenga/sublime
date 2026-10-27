@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A place to share thoughts anonymously. No names. No judgment.">
+  <title>The Anonymous Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">The Anonymous Room<span class="brand-dot">.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#latest">Latest</a>
+      <a href="#submit">Submit</a>
+      <a href="rules.html">Rules</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">A space to speak freely</p>
+      <h1>Real thoughts.<br><span>No names. No judgment.</span></h1>
+      <p class="intro">Share a thought, a story, a question, or something you've never said out loud.</p>
+      <a class="button button-secondary" href="#submit">Share anonymously <span aria-hidden="true">↓</span></a>
+      <p class="privacy-note">Please don't include names, addresses, phone numbers, or other identifying details.</p>
+    </section>
+
+    <section class="submit-panel" id="submit">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Your words, your choice</p>
+          <h2>Post anonymously</h2>
+        </div>
+        <span class="live-pill"><span></span> Public feed</span>
+      </div>
+      <form id="post-form">
+        <label for="post-title">Title <span class="optional">(optional)</span></label>
+        <input id="post-title" name="title" maxlength="90" placeholder="Give your post a title">
+        <label for="post-body">What's on your mind?</label>
+        <textarea id="post-body" name="body" maxlength="2000" rows="5" required placeholder="Write what you'd like to share…"></textarea>
+        <div class="form-bottom">
+          <span id="char-count">0 / 2000</span>
+          <button class="button" id="submit-button" type="submit">Publish post <span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        <p class="fine-print">Posts publish immediately. Don't share private information or content that targets or threatens someone.</p>
+      </form>
+    </section>
+
+    <section class="feed-section" id="latest">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">From the community</p>
+          <h2>Latest posts</h2>
+        </div>
+        <button class="text-button" id="refresh-button" type="button">Refresh ↻</button>
+      </div>
+      <div id="posts" class="posts">
+        <div class="empty-state"><div class="empty-icon">✳</div><h3>Your community starts here.</h3><p>Connect the database using the setup guide, then the public feed will appear here.</p></div>
+      </div>
+      <p class="feed-footnote">Posts are public. Anyone can copy or screenshot them, so avoid details that could identify you.</p>
+    </section>
+
+    <section class="telegram-panel">
+      <div class="telegram-mark" aria-hidden="true">➤</div>
+      <div class="telegram-copy">
+        <p class="eyebrow">Continue the conversation</p>
+        <h2>Join us on Telegram</h2>
+        <p>Chat with the community. Read the group rules and protect your privacy.</p>
+      </div>
+      <a class="button button-secondary" id="telegram-link" href="https://t.me/" target="_blank" rel="noopener noreferrer">Join the group ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="./">The Anonymous Room<span class="brand-dot">.</span></a>
+    <span>Speak freely. Be kind.</span>
+    <a href="rules.html">Community rules</a>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
