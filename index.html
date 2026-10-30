@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anonincorporated9 — 666 ANON</title>
+    <link rel="icon" href="assets/666-anon-logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="identity">
+            <img src="assets/666-anon-logo.png" alt="666 ANON">
+            <span>anonincorporated9</span>
+        </a>
+        <a href="rules.html" class="rules">RULES</a>
+    </header>
+
+    <main>
+        <div class="heading">
+            <div>
+                <p class="eyebrow">THE ANONYMOUS ROOM</p>
+                <h1>Public feed<span>.</span></h1>
+            </div>
+            <small>● LIVE FEED</small>
+        </div>
+
+        <div id="posts">
+            <div class="empty">Loading the room...</div>
+        </div>
+
+        <p class="retention">
+            Posts disappear 48 hours after publication.
+        </p>
+    </main>
+
+    <button id="open" class="launch">
+        <b>＋</b>
+        <span>Write something...</span>
+        <small>TEXT / PHOTO</small>
+    </button>
+
+    <div id="backdrop" class="backdrop" hidden>
+        <section class="composer">
+            <div class="composer-head">
+                <div>
+                    <p class="eyebrow">NO ACCOUNT. NO PROFILE.</p>
+                    <h2>Put it out there.</h2>
+                </div>
+                <button id="close" class="close">×</button>
+            </div>
+
+            <form id="form">
+                <textarea id="body"
+                    maxlength="5000"
+                    placeholder="What's on your mind?"></textarea>
+
+                <div class="tools">
+                    <label for="photo">＋ Add picture</label>
+                    <input id="photo" type="file"
+                        accept="image/jpeg,image/png,image/webp,image/gif">
+                    <span id="count">0 / 5000</span>
+                </div>
+
+                <div id="preview" hidden>
+                    <img id="preview-img" alt="Image preview">
+                    <button type="button" id="remove">
+                        Remove image ×
+                    </button>
+                </div>
+
+                <p id="message"></p>
+
+                <button id="publish" class="publish" type="submit">
+                    Publish anonymously ↗
+                </button>
+
+                <p class="fine">
+                    Your post is public immediately and disappears
+                    after 48 hours. Don't share private information.
+                </p>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <span>666 ANON / anonincorporated9</span>
+        <a href="rules.html">Community rules</a>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
