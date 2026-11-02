@@ -1,5 +1,5 @@
 
 window.ANON_ROOM_CONFIG = {
-  supabaseUrl: "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE",
-  supabaseAnonKey: "PASTE_YOUR_SUPABASE_ANON_PUBLIC_KEY_HERE"
+  supabaseUrl: "https://ndmxsbiyltxxrhyxixpk.supabase.co/rest/v1/",
+  supabaseAnonKey: "sb_publishable_JyEPQCt0CQGPzggZtGew8A_VBKJGM1e"
 };
