@@ -181,9 +181,10 @@
         );
 
         if (!upload.ok) {
-          throw Error(`Image upload failed (${upload.status}). Check storage policies.`);
-        }
-      }
+          const details = await upload.text();
+          throw Error(`Image upload failed (${upload.status}): ${details}`);
+       }  
+}
 
       const response = await fetch(`${base()}/rest/v1/posts`, {
         method: "POST",
