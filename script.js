@@ -35,6 +35,38 @@
       '"': "&quot;",
       "'": "&#39;"
     })[char]);
+    const linkify = value => {
+    const text = String(value ?? "");
+    const regex = /https?:\/\/[^\s<>"']+/gi;
+
+    let result = "";
+    let lastIndex = 0;
+
+    for (const match of text.matchAll(regex)) {
+      const start = match.index;
+      let url = match[0];
+      let punctuation = "";
+
+      while (/[.,!?;:)\]}]$/.test(url)) {
+        punctuation = url.slice(-1) + punctuation;
+        url = url.slice(0, -1);
+      }
+
+      result += safe(text.slice(lastIndex, start));
+
+      result += `<a href="${safe(url)}"
+        target="_blank"
+        rel="noopener noreferrer">${safe(url)}</a>`;
+
+      result += safe(punctuation);
+
+      lastIndex = start + match[0].length;
+    }
+
+    result += safe(text.slice(lastIndex));
+
+    return result;
+  };
 
   const say = (text, success = false) => {
     message.textContent = text;
@@ -118,7 +150,7 @@
 
       posts.innerHTML = data.map(post => `
         <article class="post">
-          <p class="post-text">${safe(post.body)}</p>
+          <p class="post-text">${linkify(post.body)}</p>
           ${post.image_path ? `
             <img class="post-image"
               src="${imageBase}${encodeURIComponent(post.image_path)}"
