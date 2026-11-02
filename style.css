@@ -1,1 +1,9 @@
+.post-text a {
+  color: #4da6ff;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
 
+.post-text a:hover {
+  color: #80c2ff;
+}
