@@ -231,8 +231,9 @@
         })
       });
 
-      if (!response.ok) {
-        throw Error(`Post failed (${response.status}). Check database policies.`);
+        if (!response.ok) {
+          const details = await response.text();
+          throw Error(`Post failed (${response.status}): ${details}`);
       }
 
       body.value = "";
